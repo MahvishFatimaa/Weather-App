@@ -3,37 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Forecast</title>
+    <title>Weather App</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="card">
-        <div class="search">
-            <input type="text" placeholder="Enter Your City Name" spellcheck="false">
-            <button><img src="images/search.png" alt=""></button>
+        <div class="header">
+            <h1>Weather</h1>
+            <button class="location-btn" id="locationBtn" title="Use my location">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+            </button>
         </div>
+
+        <div class="search">
+            <input type="text" placeholder="Search for a city..." spellcheck="false" id="searchInput">
+            <button id="searchBtn">
+                <img src="search.png" alt="Search">
+            </button>
+        </div>
+
+        <div class="loading">
+            <div class="spinner"></div>
+            <p>Loading...</p>
+        </div>
+
         <div class="error">
-            <p>Invalid City Name </p>
+            <p id="errorMsg">Unable to fetch weather data</p>
         </div>
    
-       <div class="weather">
-            <img src="https://github.com/MahvishFatimaa/Weather-App/blob/main/rain.png?raw=true" class="icons">
-            <h1 class="temp"></h1>
-            <h2 class="city"></h2>
+        <div class="weather">
+            <img src="rain.png" class="weather-icon" alt="Weather">
+            <h1 class="temp">--°C</h1>
+            <h2 class="city">--</h2>
+            <p class="description">--</p>
+            
             <div class="details">
                 <div class="col">
-                    <img src="https://github.com/MahvishFatimaa/Weather-App/blob/main/humidity.png?raw=true">
+                    <img src="humidity.png" alt="Humidity">
                     <div>
-                        <p class="humidity"></p>
+                        <p class="humidity">--%</p>
                         <p>Humidity</p>
                     </div>
                 </div>
                 <div class="col">
-                    <img src="https://github.com/MahvishFatimaa/Weather-App/blob/main/wind.png?raw=true">
+                    <img src="wind.png" alt="Wind">
                     <div>
-                        <p class="wind"></p>
+                        <p class="wind">-- km/h</p>
                         <p>Wind Speed</p>
                     </div>
+                </div>
+            </div>
+
+            <div class="extra-details">
+                <div class="extra-col">
+                    <p class="label">Feels Like</p>
+                    <p class="feels-like">--°C</p>
+                </div>
+                <div class="extra-col">
+                    <p class="label">Pressure</p>
+                    <p class="pressure">-- hPa</p>
+                </div>
+                <div class="extra-col aqi-col">
+                    <p class="label">Air Quality</p>
+                    <p class="aqi">--</p>
                 </div>
             </div>
         </div>
